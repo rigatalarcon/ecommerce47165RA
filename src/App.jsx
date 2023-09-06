@@ -4,9 +4,9 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-const App = () => {
+function App () {
   return (
-    <>
+    <div className='App'>
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -16,7 +16,8 @@ const App = () => {
           <Route path='*' element={<h1>Error 404 Not Found</h1>} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
+    
   )
 }
 
