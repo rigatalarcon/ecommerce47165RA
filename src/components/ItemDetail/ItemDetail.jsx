@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { useCart } from '././context/CartContext'
 
-const InputCount = ({ onAdd, stock, initial= 1 }) => {
+const InputCount = ({ onAdd, stock, initial }) => {
     const [count, setCount] = useState(initial)
 
     const handleChange = (e) => {
@@ -42,20 +43,22 @@ const ButtonCount = ({ onAdd, stock, initial = 1 }) => {
 }
 
 
-const ItemDetail = ({ id, name, category, img, price, stock, description}) => {
+const ItemDetail = ({ id, name, category, img, price, stock, description }) => {
     const [inputType, setInputType] = useState('button')
     const [quantity, setQuantity] = useState(0)
 
     const ItemCount = inputType === 'input' ? InputCount : ButtonCount
 
-    const handleOnAdd = (count) => {
-        const objProductToAdd = {
-            id, name, price, count
-        }
-        console.log(objProductToAdd)
-        console.log('agregue al carrito: ', count)
+    const { addItem } = useCart()
 
-        setQuantity(count)
+    const handleOnAdd = (quantity) => {
+        const objProductToAdd = {
+            id, name, price, quantity
+        }
+        addItem(objProductToAdd)
+        console.log('agregue al carrito: ', quantity)
+
+        setQuantity(quantity)
     }
 
     return (
