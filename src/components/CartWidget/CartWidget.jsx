@@ -1,7 +1,8 @@
 import cart from './assets/carrito2.svg'
-import { useCart } from '../Context/CartContext'
-const CartWidget = () => {
+import { useCart } from '../../Context/CartContext'
 
+
+const CartWidget = () => {
     const { totalQuantity } = useCart()
     return (
         <div>
