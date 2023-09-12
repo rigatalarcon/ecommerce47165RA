@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useCart } from '../../Context/CartContext'
+import { useCart } from '../../context/CartContext'
 import { useNotification } from '../../notification/NotificationService'
 
 const InputCount = ({ onAdd, stock, initial }) => {
