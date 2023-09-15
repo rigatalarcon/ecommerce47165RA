@@ -1,26 +1,32 @@
-import { useRef, useEffect } from "react"
+import { useEffect, useRef, useState } from "react"
 
-const Button = () => {
-    const buttonRef = useRef()
-    
+const Animation = () => {
+    const [color, setColor] = useState('pink')
+    const divRef = useRef()
+
     useEffect(() => {
-        const buttonEl = buttonRef.current
-
-        const handleClick = () => {
-            console.log('me hicieron click')
+        const handleScroll = () => {
+            const div = divRef.current
+            const { y } = div.getBoundingClientRect()
+            console.log(y)
+            const newColor = y <= 0 ? 'orange' : 'pink'
+            setColor(newColor)
         }
-        console.log('agrego eventlistener')
-        buttonEl.addEventListener('click', handleClick)
+
+        window.addEventListener('scroll', handleScroll)
 
         return () => {
-            console.log('limpio eventlistener')
-            buttonEl.removeEventListener('click', handleClick)
+            window.removeEventListener('scroll', handleScroll)
         }
     }, [])
-    
+
     return (
-        <button ref={buttonRef}>boton</button>
+        <div>
+            <div ref={divRef} style={{ height: '180vh', background: color}}>
+                <h1>Scroll to change background</h1>
+            </div>
+        </div>
     )
 }
 
-export default Button
+export default Animation

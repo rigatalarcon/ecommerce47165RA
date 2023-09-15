@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     margin-bottom: 50px;
-    background-color: aqua;
+    background-color: rgb(111, 238, 196);
 }
 
 .active {

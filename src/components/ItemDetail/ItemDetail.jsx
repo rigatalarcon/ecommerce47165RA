@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useCart } from '../../Context/CartContext'
-import { useNotification } from '../../notification/NotificationService'
+import { useCart } from '../../context/CartContext'
+import { useNotification } from '../../Notification/NotificationService'
 
 const InputCount = ({ onAdd, stock, initial }) => {
     const [count, setCount] = useState(initial)
@@ -44,7 +44,7 @@ const ButtonCount = ({ onAdd, stock, initial = 1 }) => {
 }
 
 
-const ItemDetail = ({ id, name, category, img, price, stock, description }) => {
+const ItemDetail = ({ id, name, category, img, price, stock, description, }) => {
     const [inputType, setInputType] = useState('button')
     const [quantity, setQuantity] = useState(0)
 

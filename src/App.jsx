@@ -3,8 +3,9 @@ import Navbar from './components/Navbar/Navbar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { CartProvider } from './Context/CartContext'
+import { CartProvider } from './context/CartContext'
 import { NotificationProvider } from './Notification/NotificationService'
+
 const App = () => {
   return (
     <>
