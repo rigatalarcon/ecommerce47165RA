@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useCart } from '../../context/CartContext'
 import { useNotification } from '../../Notification/NotificationService'
+import { Link } from 'react-router-dom'
 
 const InputCount = ({ onAdd, stock, initial }) => {
     const [count, setCount] = useState(initial)
@@ -93,7 +94,7 @@ const ItemDetail = ({ id, name, category, img, price, stock, description, }) => 
                     quantity === 0 ? (
                         <ItemCount onAdd={handleOnAdd} stock={stock}/>
                     ) : (
-                        <button>Finalizar compra</button>
+                        <Link to= '/cart'>Finalizar compra</Link>
                     )
                 }
             </footer>
