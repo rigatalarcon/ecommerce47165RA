@@ -11,7 +11,7 @@ const Cart = () => {
                 {
                     cart.map(prod => {
                         return (
-                            <div key={prod.id} style={{ display: 'flex', justifyContent: 'space-around'}}>
+                            <div key={prod.id} {...prod} style={{ display: 'flex', justifyContent: 'space-around'}}>
                                 <h1>{prod.name}</h1>
                                 <button onClick={() => removeItem(prod.id)}>remove</button>
                             </div>
