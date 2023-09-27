@@ -7,13 +7,13 @@ const Button = () => {
         const buttonEl = buttonRef.current
 
         const handleClick = () => {
-            console.log('me hicieron click')
+        
         }
-        console.log('agrego eventlistener')
+        
         buttonEl.addEventListener('click', handleClick)
 
         return () => {
-            console.log('limpio eventlistener')
+            
             buttonEl.removeEventListener('click', handleClick)
         }
     }, [])

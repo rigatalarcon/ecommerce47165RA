@@ -2,13 +2,10 @@ import { Link } from "react-router-dom"
 
 const Item = ({ id, name, img, price }) => {
 
-
-    //const navigate = useNavigate()
     const handleClick = (e) => {
         e.stopPropagation()
-        console.log('item')
+        
     }
-
 
     return (
         <div onClick={handleClick}>
@@ -16,7 +13,7 @@ const Item = ({ id, name, img, price }) => {
             <img src={img} style={{ width: 100}}/>
             <p>Precio: $ {price}</p>
             <Link to={`/detail/${id}`} >Ver Detalle</Link>
-            {/* <button onClick={() => navigate('/detail')}>Detalle</button>*/}
+            
         </div>
     )
 }

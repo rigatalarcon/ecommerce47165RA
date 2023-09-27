@@ -1,11 +1,11 @@
-import { Form } from "react-router-dom";
+import { Form } from "formik";
 import { Formik, Field, ErrorMessage } from "formik";
 import { useState } from "react";
 
 
-const ContactForm = (createOrder) => {
+const ContactForm = ({createOrder}) => { 
 
-    const [formularioEnviado, cambiarFormularioEnviado] = useState(false)
+    const [ formularioEnviado, cambiarFormularioEnviado] = useState(false)
     return (
         <>
             <Formik
@@ -38,8 +38,9 @@ const ContactForm = (createOrder) => {
                 }}
 
                 onSubmit={(valores, { resetForm }) => {
+                    createOrder(valores)
                     resetForm();
-                    console.log('formulario enviado')
+                    alert('formulario enviado')
                     cambiarFormularioEnviado(true)
                     setTimeout(() => cambiarFormularioEnviado(false), 5000);
                 }}
@@ -59,12 +60,11 @@ const ContactForm = (createOrder) => {
                                 <div className="error">{errors.nombre}</div>
                             )} />
 
-
                         </div>
                         <div>
                             <label htmlFor="telefono">Telefono</label>
                             <Field
-                                type="number"
+                                type="numero"
                                 id="telefono"
                                 name="telefono"
                                 placeholder="ingresa un telefono"
@@ -77,7 +77,7 @@ const ContactForm = (createOrder) => {
                         <div>
                             <label htmlFor="correo">Email</label>
                             <Field
-                                type="text"
+                                type="email"
                                 id="correo"
                                 name="correo"
                                 placeholder="ingresa un correo"
@@ -88,7 +88,7 @@ const ContactForm = (createOrder) => {
                         </div>
 
                         <button type="submit">Enviar</button>
-                        <button onClick={() => createOrder({ })}>Generar Orden</button>
+                        
                         {formularioEnviado && <p className="exito">Formulario enviado con Exito</p>}
                     </Form>)}
             </Formik>

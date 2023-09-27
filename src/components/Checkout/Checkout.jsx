@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useCart } from '../../context/CartContext'
 import { collection, query, where, documentId, getDocs, writeBatch, addDoc } from 'firebase/firestore'
 import { db } from '../../services/firebase/firebase'
-import { Form } from 'react-router-dom'
 import ContactForm from '../ContactForm/ContactForm'
 
 const Checkout = () => {
@@ -17,9 +16,9 @@ const Checkout = () => {
 
             const objOrder = {
                 buyer: {
-                    name: '',
-                    phone: '',
-                    email: ''
+                    name: nombre,
+                    phone: telefono,
+                    email: correo
                 },
                 items: cart,
                 total
@@ -27,16 +26,8 @@ const Checkout = () => {
 
             const batch = writeBatch(db)
             const outOfStock = []
-
             const ids = cart.map(prod => prod.id)
-            console.log(ids)
-
             const productsRef = query(collection(db, 'products'), where(documentId(), 'in', ids))
-
-            // getDocs(productsRef).then(({ docs }) => {
-            //     docs.forEact()
-            // })
-
             const { docs } = await getDocs(productsRef)
 
             docs.forEach(doc => {
@@ -55,32 +46,30 @@ const Checkout = () => {
 
             if(outOfStock.length === 0) {
                 const orderRef = collection(db, 'orders')
-
                 const { id: orderId } = await addDoc(orderRef, objOrder)
-
                 batch.commit()
                 clearCart()                
                 setOrderId(orderId)
-                console.log('el numero de orden es: ' + orderId)
+
             } else {
-                console.error('Hay productos fuera de stock...')
+                alert (<h1>Hay productos fuera de stock...</h1>);
             }
         } catch (error) {
-            console.log('Ocurrio un error al obtener datos: ' + error.message)
+            alert (<h1>Ocurrio un error al obtener datos</h1>);
+            
         } finally {
             setLoading(false)
         }
     }
 
     if(loading) {
-        return <h1>Se esta generando su orden...</h1>
+        alert(<h1>Se esta generando su orden...</h1>);
     }
 
     return (
         <>
             <h1>Checkout</h1>
-            <ContactForm createOrder={createOrder}/>
-            
+            <ContactForm createOrder={createOrder}/>            
             {orderId && <h1> El Id de su compra es {orderId}</h1>}
         </>
     )

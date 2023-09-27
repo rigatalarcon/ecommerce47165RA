@@ -6,22 +6,25 @@ const Cart = () => {
 
     return (
         <>
-            <h1>Cart</h1>
-            <section>
-                {
-                    cart.map(prod => {
-                        return (
-                            <div key={prod.id} {...prod} style={{ display: 'flex', justifyContent: 'space-around'}}>
-                                <h1>{prod.name}</h1>
-                                <button onClick={() => removeItem(prod.id)}>remove</button>
-                            </div>
-                        )
-                    })
-                }
-            </section>
-            <h2>Total: ${total}</h2>
-            <Link to='/checkout'>Checkout</Link>
+            <main>
+                <h1>Cart</h1>
+                <section>
+                    {
+                        cart.map(prod => {
+                            return (
+                                <div key={prod.id} {...prod} style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
+                                    <h1>{prod.name}</h1>
+                                    <button onClick={() => removeItem(prod.id)}>remove</button>
+                                </div>
+                            )
+                        })
+                    }
+                </section>
+                <h2>Total: ${total}</h2>
+                <Link to='/checkout'>Checkout</Link>
+            </main>
         </>
+
     )
 }
 

@@ -23,8 +23,7 @@ const App = () => {
               <Route path='/category/:categoryId' element={<ItemListContainer greeting={'Productos por categoria'} />} />
               <Route path='/detail/:productId' element={<ItemDetailContainer />} />
               <Route path='/cart' element={<Cart />} />
-              <Route path='/checkout' element={<Checkout />} />
-              
+              <Route path='/checkout' element={<Checkout />} />              
               <Route path='*' element={<h1>Error 404 Not Found</h1>} />
             </Routes>
           </BrowserRouter>

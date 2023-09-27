@@ -2,8 +2,7 @@
 import { useState } from "react"
 
 const ItemCount = ({ stock, onAdd }) => {
-    const [count, setCount] = useState(1)
-    
+    const [count, setCount] = useState(1)    
     const decrement = () => {
         if(count > 1) setCount(prev => prev - 1)
     }
@@ -16,7 +15,7 @@ const ItemCount = ({ stock, onAdd }) => {
         <div>
             <h3>{count}</h3>
             <button onClick={decrement}>-</button>
-            <button onClick={() => onAdd(count)}>agregar al cartito </button>
+            <button onClick={() => onAdd(count)}>Agregar al carrito </button>
             <button onClick={increment}>+</button>
         </div>
     )

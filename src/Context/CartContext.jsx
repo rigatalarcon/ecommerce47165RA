@@ -4,15 +4,14 @@ const CartContext = createContext('Este valor lo ven aquellos que esten fuera de
 
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
-    console.log(cart)
+    
 
     const addItem = (productToAdd) => {
         if (!isInCart(productToAdd.id)) {
             setCart(prev => [...prev, productToAdd])
         } else {
             console.log('hay que actualizar la cantidad')
-            // const updatedCart = cart.map()
-            // setCart(updatedCart)
+            
         }
     }
 
@@ -59,6 +58,7 @@ export const CartProvider = ({ children }) => {
     )
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useCart = () => {
     return useContext(CartContext)
 }

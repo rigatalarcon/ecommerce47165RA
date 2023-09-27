@@ -2,12 +2,10 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #e39e2672;
-
-  font-synthesis: none;
+  color: rgba(242, 199, 5, 0.963);  
+  background-image: url(../src/Img/—Slidesdocs—tecnología\ azul\ claro\ textura\ naturaleza_ec588f9cfb.jpg);
+  
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,9 +13,12 @@
 }
 
 a {
-  font-weight: 500;
-  color: #373fe8;
+  font-size: 15px;
+  font-weight: 10px;
+  color:  rgba(242, 199, 5, 0.963);
   text-decoration: inherit;
+  margin: 5px;
+  padding-top: 30px;
 }
 a:hover {
   color: #535bf2;
@@ -30,7 +31,9 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-
+main {
+  background-color: #5e9e728b;
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -38,20 +41,40 @@ h1 {
 .ContactForm {
   min-width: 600px;
   margin-top: 50px;
-  background: #fff;
+  background: #948686;
   border-radius: 5px;
   padding: 20px;
-  box-shadow: (0, 0, 0, 0.16)8px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.73) 0px 1px 4px;
 }
 
+.ContactForm > div {
+  margin-bottom: 20px;
+}
+.ContactForm label{
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #000000;
+}
+.ContactForm input, .ContactForm textarea {
+  font-family:'open sans';
+  width: 90%;
+  border-radius: 5px;
+  border: 2px solid #e2e2e2;
+  font-size: 18px;
+  padding: 10px;
+  margin-bottom: 5px;
+  color: #e3adad;
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 10px;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #fb9898;
+  background-color: #eda705b5;
   cursor: pointer;
   transition: border-color 0.25s;
 }
