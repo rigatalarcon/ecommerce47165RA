@@ -1,6 +1,6 @@
 # Mi Primer Proyecto en React
 
-Este es mi primer proyecto en React, y sin la ayuda del profesor y tutores hubiera sido bastante dificil porder llegar, pero con una buena guia uno no se puede perder, la msma consta de la creacion de un carro de compra con un formulario de final de validacion, ademas de crear un Id de identficacion de los productos seleccionados, se puede navegar desde la pagina principal pasando por el detalle del prooducto y elgigiendo la cantidad del mismo a adquirir.  
+Este es mi primer proyecto en React, y sin la ayuda del profesor y tutores hubiera sido bastante dificil poder llegar, pero con una buena guia, uno no se puede perder, este proyecto consta de la creacion de un carro de compra con un formulario de final de validacion, ademas de crear un Id de identficacion de los productos seleccionados, se puede navegar desde la pagina principal pasando por el detalle del producto y elgigiendo la cantidad del mismo a adquirir.  
 
 ## ¿Por qué React?
 
