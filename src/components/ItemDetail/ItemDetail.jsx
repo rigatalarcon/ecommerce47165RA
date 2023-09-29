@@ -15,7 +15,7 @@ const InputCount = ({ onAdd, stock, initial }) => {
     return (
         <div>
             <input type='number' onChange={handleChange} value={count} />
-            <button onClick={() => onAdd(count)}>Agregar al carrito</button>
+            <button onClick={() => onAdd(count)}>Agregar al Carrito</button>
         </div>
     )
 }

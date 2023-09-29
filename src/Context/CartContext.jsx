@@ -10,7 +10,7 @@ export const CartProvider = ({ children }) => {
         if (!isInCart(productToAdd.id)) {
             setCart(prev => [...prev, productToAdd])
         } else {
-            console.log('hay que actualizar la cantidad')
+            alert('hay que actualizar la cantidad');
             
         }
     }
@@ -58,7 +58,7 @@ export const CartProvider = ({ children }) => {
     )
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
+
 export const useCart = () => {
     return useContext(CartContext)
 }
