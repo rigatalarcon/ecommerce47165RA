@@ -1,17 +1,14 @@
 import { useState, createContext, useContext } from 'react'
 
-const CartContext = createContext('Este valor lo ven aquellos que esten fuera del provider')
+const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
-    
-
     const addItem = (productToAdd) => {
         if (!isInCart(productToAdd.id)) {
             setCart(prev => [...prev, productToAdd])
         } else {
             alert('hay que actualizar la cantidad');
-            
         }
     }
 
@@ -30,10 +27,8 @@ export const CartProvider = ({ children }) => {
     }
 
     const totalQuantity = getTotalQuantity()
-
     const getTotal = () => {
         let total = 0
-
         cart.forEach(prod => {
             total += prod.quantity * prod.price
         })
@@ -42,7 +37,6 @@ export const CartProvider = ({ children }) => {
     }
 
     const total = getTotal()
-
     const removeItem = (id) => {
         setCart(prev => prev.filter(prod => prod.id !== id))
     }
